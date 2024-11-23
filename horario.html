@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horario de Clases</title>
+  <link rel="stylesheet" href="horario.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Horario de Clase</h1>
+    <div class="nota">
+      <p>Nota: Presione en los cuadros de colores para listar alumnos</p>
+    </div>
+
+    <!-- Tabla del horario -->
+    <table class="horario">
+      <thead>
+        <tr>
+          <th>HORA</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+          <th>Sábado</th>
+          <th>Domingo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>07:30</td>
+          <td class="clase" data-detalles="Clase de MS1501C">MS1501C (Teoría)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>08:30</td>
+          <td class="clase" data-detalles="Clase de MS1501C">MS1501C (Práctica)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de MS1505C">MS1505C (Teoría)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>10:00</td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de MS1501E">MS1501E (Teoría)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>11:00</td>
+          <td></td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de MS1501E">MS1501E (Práctica)</td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de BI101F">BI101F (Teoría)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>12:00</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de MS1505C">MS1505C (Práctica)</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>13:00</td>
+          <td class="clase" data-detalles="Clase de BI101F">BI101F (Teoría)</td>
+          <td></td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de MS1505C">MS1505C (Teoría)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>14:00</td>
+          <td></td>
+          <td class="clase" data-detalles="Clase de MS1505C">MS1505C (Teoría)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Modal de detalles de la clase -->
+    <div id="detallesModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Detalles de la Clase</h3>
+        <p id="detallesTexto">Selecciona una clase para ver los detalles.</p>
+      </div>
+    </div>
+
+    <div class="descargar-pdf">
+      <button id="descargarPDF">Descargar PDF</button>
+    </div>
+  </div>
+
+  <script src="horario.js"></script>
+</body>
+</html>
