@@ -1,107 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario de Clases</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra Lateral Colapsable</title>
+  <link rel="stylesheet" href="sidebar-collapsible.css">
 </head>
 <body>
-    <div class="sidebar">
-        <ul>
-            <li><strong>General</strong></li>
-            <li onclick="showContent('horario')">Mi Horario de Clases</li>
-            <li onclick="showContent('info')">Información Docente</li>
-            <li onclick="showContent('cursos')">Mis Cursos Asignados</li>
-            <li>Tutoría Alumnos</li>
-            <li>Asistencia</li>
-        </ul>
-    </div>
-    <div class="content">
-        <div id="horario" class="section active">
-            <div class="header">
-                <h1>Horario de Clase</h1>
-                <button>Descargar PDF</button>
-            </div>
-            <div class="schedule">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Hora</th>
-                            <th>Lunes</th>
-                            <th>Martes</th>
-                            <th>Miércoles</th>
-                            <th>Jueves</th>
-                            <th>Viernes</th>
-                            <th>Sábado</th>
-                            <th>Domingo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>07-08</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>09-10</td>
-                            <td></td>
-                            <td class="class" onclick="showClassDetails('MC510-C/D')">MC510-C/D<br>Virtual (T)</td>
-                            <td></td>
-                            <td></td>
-                            <td class="class" onclick="showClassDetails('BICO1-F')">BICO1-F<br>Virtual (T)</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>10-11</td>
-                            <td></td>
-                            <td class="class" onclick="showClassDetails('MC510-E')">MC510-E<br>Virtual (T)</td>
-                            <td class="class" onclick="showClassDetails('MC510-E')">MC510-E<br>Virtual (P)</td>
-                            <td></td>
-                            <td class="class" onclick="showClassDetails('BICO1-F')">BICO1-F<br>Virtual (P)</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>14-15</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="class" onclick="showClassDetails('MB545-C')">MB545-C<br>Virtual (P)</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <!-- Barra lateral -->
+  <div class="sidebar-container" id="sidebar">
+    <button class="btn-close-sidebar" id="closeSidebarButton">×</button>
+    <h2>General</h2>
+    <a href="/horario" class="sidebar-link" data-page="horario">Horario de clases</a>
+    <a href="/informacion" class="sidebar-link" data-page="informacion">Informacion de Docente</a>
+    <a href="/cursos" class="sidebar-link" data-page="cursos">Mis cursos asignados</a>
+    <a href="/tutoria" class="sidebar-link" data-page="tutoria">Tutoria Alumnos</a>
+    <a href="/asistencias" class="sidebar-link" data-page="asistencias">Asistencias</a>
+    <a href="/notas" class="sidebar-link" data-page="notas">Cargar Notas</a>
+    <a href="/biblioteca" class="sidebar-link" data-page="biblioteca">Biblioteca Virtual</a>
+    <a href="/disponibilidad" class="sidebar-link" data-page="disponibilidad">Mi Disponibilidad</a>
+  </div>
 
-        <div id="info" class="section">
-            <h2>Información Docente</h2>
-            <p>Aquí puedes agregar más información del docente...</p>
-        </div>
+  <!-- Botón para abrir la barra lateral -->
+  <button class="btn-toggle-sidebar" id="openSidebarButton">☰</button>
 
-        <div id="cursos" class="section">
-            <h2>Mis Cursos Asignados</h2>
-            <p>Información sobre los cursos asignados...</p>
-        </div>
+  <!-- Contenido dinámico -->
+  <div class="main-content" id="mainContent">
+    <h1>Bienvenido</h1>
+    <p>Selecciona una opción en el menú para cambiar de página.</p>
+  </div>
 
-        <div id="classDetails" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h2>Detalles de la Clase</h2>
-                <p id="classInfo">Información de la clase aquí...</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="sidebar-collapsible.js"></script>
 </body>
 </html>
