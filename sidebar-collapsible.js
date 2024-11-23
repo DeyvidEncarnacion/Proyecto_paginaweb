@@ -37,10 +37,9 @@ function loadPage(page) {
         <iframe src="datos.html" width="100%" height="900px"></iframe>
       `;
       break;
-    case 'contact':
+    case 'horario':
       mainContent.innerHTML = `
-        <h1>Contacto</h1>
-        <p>Contáctanos para más información.</p>
+        <iframe src="horario.html" width="100%" height="900px"></iframe>
       `;
       break;
     default:
