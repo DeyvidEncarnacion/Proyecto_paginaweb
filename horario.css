@@ -102,15 +102,16 @@ body {
   }
   
   #descargarPDF {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #4db8ff;
-    color: white;
+    background-color: #007bff;
+    color: #fff;
     border: none;
+    padding: 8px 12px;
     cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
   }
   
   #descargarPDF:hover {
-    background-color: #3399cc;
+    background-color: #ff4d4d;
   }
   
