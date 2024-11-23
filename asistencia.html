@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Asistencia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <h2>OBREGON RAMOS, MAXIMO</h2>
+        </div>
+
+        <div class="attendance-section">
+            <label for="semester">Semestre:</label>
+            <select id="semester">
+                <option>20231</option>
+                <option>20232</option>
+                <!-- Agregar más opciones si es necesario -->
+            </select>
+            <p>Presione este botón solo cuando tenga que registrar su entrada y su salida de clase</p>
+            <div class="buttons">
+                <button class="btn-green">MARCAR MI ASISTENCIA: ENTRADA / SALIDA</button>
+                <button class="btn-orange">TOMAR ASISTENCIA ALUMNOS</button>
+                <button class="btn-blue">SOLICITAR RECUPERACIÓN / JUSTIFICACIÓN</button>
+            </div>
+            <div class="status-buttons">
+                <button>P: PUNTUAL</button>
+                <button>T: TARDANZA (MIN)</button>
+                <button>F: FALTA</button>
+                <button>N.N.: N.N</button>
+            </div>
+            <button class="btn-report">REPORTE</button>
+        </div>
+
+        <!-- Tabla de Asistencia -->
+        <div class="attendance-table">
+            <h3>MAYO 2023</h3>
+            <table>
+                <tr>
+                    <th>Día</th>
+                    <th>Curso</th>
+                    <th>Horario</th>
+                    <th>Marcación</th>
+                    <th>Est</th>
+                </tr>
+                <tr>
+                    <td>Viernes 12</td>
+                    <td>MC510-E (TEO)</td>
+                    <td>11-13</td>
+                    <td>11:02 - 13:00</td>
+                    <td>P</td>
+                </tr>
+                <tr>
+                    <td>Viernes 12</td>
+                    <td>BIC01-F (PRA)</td>
+                    <td>09-11</td>
+                    <td>09:00 - 11:24</td>
+                    <td>P</td>
+                </tr>
+                <!-- Agregar más filas según sea necesario -->
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
