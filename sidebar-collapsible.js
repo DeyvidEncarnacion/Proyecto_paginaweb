@@ -32,10 +32,9 @@ function loadPage(page) {
         <iframe src="asistencia.html" width="100%" height="900px"></iframe>
       `;
       break;
-    case 'about':
+    case 'informacion':
       mainContent.innerHTML = `
-        <h1>Acerca de</h1>
-        <p>Esta página contiene información sobre nosotros.</p>
+        <iframe src="datos.html" width="100%" height="900px"></iframe>
       `;
       break;
     case 'contact':
