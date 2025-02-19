@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="pdf-button">
-                <button class="btn-pdf">Generar PDF</button>
+                <button class="btn-pdf" id="generarPDF">Generar PDF</button>
             </div>
         </div>
 
@@ -41,43 +41,43 @@
             <div class="row">
                 <div class="column">
                     <label>Sexo</label>
-                    <select>
+                    <select id="sexo">
                         <option>Masculino</option>
                         <option>Femenino</option>
                     </select>
                     <br></br>
                     <label>Fecha Nacimiento</label>
-                    <input type="date" value="1975-02-16">
+                    <input type="date" id="fechaNacimiento" value="1975-02-16">
                     <br></br>
                     <label>Teléfono Fijo</label>
-                    <input type="text" value="5316292 | 5456454 | 5310303">
+                    <input type="text" id="telefono" value="5316292 | 5456454 | 5310303">
                     <br></br>
                     <label>RUC</label>
-                    <input type="text" placeholder="Ingrese RUC">
+                    <input type="text" id="ruc" placeholder="Ingrese RUC">
                     <br></br>
                     <label>Brevet y Categoría</label>
-                    <input type="text" placeholder="Ingrese Brevet y Categoría">
+                    <input type="text" id="brevet" placeholder="Ingrese Brevet y Categoría">
                     <br></br>
                 </div>
                 <div class="column">
                     <label>DNI</label>
-                    <input type="text" value="08161078">
+                    <input type="text" id="dni" value="08161078">
                     <br></br>
                     <label>Celular</label>
-                    <input type="text" value="951629294 | 999662562">
+                    <input type="text" id="celular" value="951629294 | 999662562">
                     <br></br>
                     <label>Lib Militar</label>
-                    <input type="text" placeholder="Ingrese Lib Militar">
+                    <input type="text" id="libMilitar" placeholder="Ingrese Lib Militar">
                     <br></br>
                     <label>Vehículo</label>
-                    <input type="text" placeholder="Indicar modelo, placa, año, color">
+                    <input type="text" id="vehiculo" placeholder="Indicar modelo, placa, año, color">
                     <br></br>
                     <label>Grupo Sanguíneo</label>
-                    <input type="text" placeholder="Ingrese Grupo Sanguíneo">
+                    <input type="text" id="grupoSanguineo" placeholder="Ingrese Grupo Sanguíneo">
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="datos.js"></script>
 </body>
 </html>
