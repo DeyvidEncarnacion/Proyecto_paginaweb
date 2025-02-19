@@ -1,39 +1,41 @@
-// Obtener todas las celdas con clase 'clase'
-const clases = document.querySelectorAll('.clase');
+const horarios = {
+  "2024-1": [
+    { hora: "07:30", lunes: "MS1501C (Teoría)", martes: "", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "08:30", lunes: "MS1501C (Práctica)", martes: "", miercoles: "", jueves: "", viernes: "MS1505C (Teoría)", sabado: "", domingo: "" },
+    { hora: "10:00", lunes: "", martes: "MS1501E (Teoría)", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+  ],
+  "2024-2": [
+    { hora: "07:30", lunes: "BI101F (Teoría)", martes: "", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "08:30", lunes: "BI101F (Práctica)", martes: "", miercoles: "", jueves: "", viernes: "MS1505C (Teoría)", sabado: "", domingo: "" },
+    { hora: "10:00", lunes: "", martes: "MS1501E (Teoría)", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+  ]
+};
 
-// Obtener el modal
-const modal = document.getElementById("detallesModal");
+let semestreActual = "2024-1";
+const horarioBody = document.getElementById("horarioBody");
+const cambiarSemestreBtn = document.getElementById("cambiarSemestre");
 
-// Obtener el elemento <span> para cerrar el modal
-const span = document.getElementsByClassName("close")[0];
-
-// Función para mostrar los detalles de la clase en el modal
-clases.forEach(clase => {
-  clase.addEventListener('click', function() {
-    const detalles = this.getAttribute('data-detalles'); // Obtener los detalles desde el atributo
-    const detallesTexto = document.getElementById('detallesTexto');
-    
-    // Mostrar los detalles en el modal
-    detallesTexto.textContent = detalles;
-    
-    // Mostrar el modal
-    modal.style.display = "block";
+function cargarHorario(semestre) {
+  horarioBody.innerHTML = "";
+  horarios[semestre].forEach(clase => {
+    const row = `<tr>
+      <td>${clase.hora}</td>
+      <td>${clase.lunes}</td>
+      <td>${clase.martes}</td>
+      <td>${clase.miercoles}</td>
+      <td>${clase.jueves}</td>
+      <td>${clase.viernes}</td>
+      <td>${clase.sabado}</td>
+      <td>${clase.domingo}</td>
+    </tr>`;
+    horarioBody.innerHTML += row;
   });
+}
+
+cambiarSemestreBtn.addEventListener("click", () => {
+  semestreActual = semestreActual === "2024-1" ? "2024-2" : "2024-1";
+  cargarHorario(semestreActual);
 });
 
-// Función para cerrar el modal
-span.addEventListener('click', function() {
-  modal.style.display = "none";
-});
-
-// Cerrar el modal si el usuario hace clic fuera del modal
-window.addEventListener('click', function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
-
-// Funcionalidad para descargar el horario como PDF
-document.getElementById('descargarPDF').addEventListener('click', function() {
-  window.print(); // Este método abre el cuadro de diálogo para imprimir la página
-});
+// Cargar horario inicial
+cargarHorario(semestreActual);
