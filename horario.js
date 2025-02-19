@@ -3,17 +3,35 @@ const horarios = {
     { hora: "07:30", lunes: "MS1501C (Teoría)", martes: "", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
     { hora: "08:30", lunes: "MS1501C (Práctica)", martes: "", miercoles: "", jueves: "", viernes: "MS1505C (Teoría)", sabado: "", domingo: "" },
     { hora: "10:00", lunes: "", martes: "MS1501E (Teoría)", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "14:00", lunes: "MS1501(Práctica)", martes: "MS1501E (Práctica)", miercoles: "", jueves: "MS1503B(Teoría)", viernes: "", sabado: "", domingo: "" },
   ],
   "2024-2": [
-    { hora: "07:30", lunes: "BI101F (Teoría)", martes: "", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
-    { hora: "08:30", lunes: "BI101F (Práctica)", martes: "", miercoles: "", jueves: "", viernes: "MS1505C (Teoría)", sabado: "", domingo: "" },
-    { hora: "10:00", lunes: "", martes: "MS1501E (Teoría)", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "07:30", lunes: "", martes: "BI101F (Teoría)", miercoles: "", jueves: "BI106D (Teoría)", viernes: "", sabado: "", domingo: "" },
+    { hora: "08:30", lunes: "BI104A (Teoría)", martes: "", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "10:00", lunes: "", martes: "BI101F (Práctica)", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "14:00", lunes: "BI104A (Práctica)", martes: "BI106D (Teoría)", miercoles: "", jueves: "BI106D(Práctica)", viernes: "", sabado: "", domingo: "" },
+  ],
+  "2025-1": [
+    { hora: "07:30", lunes: "CS2001 (Teoría)", martes: "", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "08:30", lunes: "CS2001 (Práctica)", martes: "", miercoles: "", jueves: "", viernes: "MA2102 (Teoría)", sabado: "", domingo: "" },
+    { hora: "10:00", lunes: "", martes: "FIS1003 (Teoría)", miercoles: "", jueves: "", viernes: "", sabado: "", domingo: "" },
+    { hora: "14:00", lunes: "CS2001(Práctica)", martes: "FIS1003 (Práctica)", miercoles: "", jueves: "MS1503B(Teoría)", viernes: "", sabado: "", domingo: "" },
   ]
 };
 
 let semestreActual = "2024-1";
 const horarioBody = document.getElementById("horarioBody");
-const cambiarSemestreBtn = document.getElementById("cambiarSemestre");
+const cambiarSemestreSelect = document.createElement("select");
+cambiarSemestreSelect.id = "cambiarSemestre";
+
+Object.keys(horarios).forEach(semestre => {
+  const option = document.createElement("option");
+  option.value = semestre;
+  option.textContent = semestre;
+  cambiarSemestreSelect.appendChild(option);
+});
+
+document.querySelector(".container").insertBefore(cambiarSemestreSelect, document.querySelector("table"));
 
 function cargarHorario(semestre) {
   horarioBody.innerHTML = "";
@@ -32,10 +50,14 @@ function cargarHorario(semestre) {
   });
 }
 
-cambiarSemestreBtn.addEventListener("click", () => {
-  semestreActual = semestreActual === "2024-1" ? "2024-2" : "2024-1";
+cambiarSemestreSelect.addEventListener("change", (event) => {
+  semestreActual = event.target.value;
   cargarHorario(semestreActual);
 });
 
 // Cargar horario inicial
 cargarHorario(semestreActual);
+// Funcionalidad para descargar el horario como PDF
+document.getElementById('descargarPDF').addEventListener('click', function() {
+  window.print(); // Este método abre el cuadro de diálogo para imprimir la página
+});
